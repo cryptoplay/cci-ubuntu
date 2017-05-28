@@ -1,7 +1,7 @@
 version: '2.1'
 
 services:
-  cci: &defaults
+  cci-ubuntu: &defaults
     image: cryptoplay/cci-ubuntu
     build:
       context: src/
