@@ -6,7 +6,7 @@ ENV GOSS_VERSION 0.3.2
 ENV BATS_VERSION 0.4.0
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -17,9 +17,9 @@ RUN apt-get update && \
     $(lsb_release -cs) \
     stable" && \
     apt-get update && \
-    apt-get install --no-install-recommends -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     bash \
-    docker-ce==${DOCKER_VERSION} \
+    docker-ce=${DOCKER_VERSION} \
     file \
     git \
     gzip \
