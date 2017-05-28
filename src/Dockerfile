@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV DOCKER_VERSION 17.03.1~ce-0~ubuntu-xenial
-ENV COMPOSE_VERSION 1.12.0
+ENV COMPOSE_VERSION 1.13.0
 ENV GOSS_VERSION 0.3.2
 ENV BATS_VERSION 0.4.0
 
@@ -25,12 +25,13 @@ RUN apt-get update && \
     gzip \
     make \
     openssh-client \
-    python-pip \
     tar \
     && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
+    curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && \
+    python get-pip.py && \
     pip install --upgrade pip && \
     pip install docker-compose==${COMPOSE_VERSION} && \
     cd /tmp && \
