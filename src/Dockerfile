@@ -24,6 +24,7 @@ RUN apt-get update && \
     git \
     gzip \
     make \
+    python-dev \
     openssh-client \
     tar \
     && \
