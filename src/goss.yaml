@@ -14,8 +14,8 @@ command:
     stdout:
     - {{ .Env.GOSS_VERSION }}
 
-package:
-  docker:
-    installed: true
-    versions:
-      - {{ .Env.DOCKER_VERSION }}
+#package:
+#  docker:
+#    installed: true
+#    versions:
+#      - {{ .Env.DOCKER_VERSION }}
