@@ -31,6 +31,7 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
+    pip install --upgrade pip && \
     pip install docker-compose==${COMPOSE_VERSION} && \
     cd /tmp && \
     curl -sSL -o bats_v${BATS_VERSION}.tar.gz https://github.com/sstephenson/bats/archive/v${BATS_VERSION}.tar.gz && \
